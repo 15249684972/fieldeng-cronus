@@ -1,1 +1,4 @@
-  
+http://archive.ics.uci.edu/ml/machine-learning-databases/00322/data.zip
+http://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip
+http://ecg.mit.edu/time-series/hr.11839
+http://ecg.mit.edu/time-series/hr.7257

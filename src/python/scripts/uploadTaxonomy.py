@@ -2,11 +2,13 @@ from org.apache.commons.io import IOUtils
 from java.nio.charset import StandardCharsets
 from org.apache.nifi.processor.io import StreamCallback
 import json
+import requests
 
 def nextNode(currNode, termPath):
    anchorPath = termPath
    #print('anchorPath: '+anchorPath)
    print('******************** sending: ' + anchorPath)
+   requests.post(anchorPath)
    for currIndex, elem in enumerate(currNode['childNodes']):
       newNode = currNode['childNodes'][currIndex]
       if len(newNode['childNodes']) > 0:
@@ -19,6 +21,7 @@ def nextNode(currNode, termPath):
          termPath = termPath +'/terms/' + newNode['name']
          #print('end reached, returning: ' + termPath)
          print('******************** sending: ' + termPath)
+         requests.post(termPath)
          return newNode
       #print(newNode['name'])
       termPath = anchorPath +'/terms/' + newNode['name']
@@ -49,7 +52,8 @@ def process(flowfile):
 
    rootNode = json.load(data)
    for currIndex, elem in enumerate(rootNode):
-      nextNode(rootNode[currIndex], 'http://hostname:21000/api/atlas/v1/taxanomies/Catalog/terms/'+rootNode[currIndex]['name'])
+      rootPath = ${atlas_url} + '/api/atlas/v1/taxanomies/Catalog/terms/'+rootNode[currIndex]['name']
+      nextNode(rootNode[currIndex], rootPath)
 
 flowfile = session.get()
 if (flowfile != None): process(flowfile)

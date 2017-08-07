@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+#from org.apache.commons.io import IOUtils
+#from java.nio.charset import StandardCharsets
+#from org.apache.nifi.processor.io import StreamCallback
 import json
 
 def nextNode(currNode, termPath):

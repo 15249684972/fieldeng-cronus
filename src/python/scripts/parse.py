@@ -3,7 +3,7 @@ from java.nio.charset import StandardCharsets
 from org.apache.nifi.processor.io import StreamCallback
 import os, sys, imp, traceback, time
 
-parser_path = '/Users/randy/projects/scripts/parsers/'
+parser_path = ${scripts.dir:append('/parsers/')}
 
 class PyStreamCallback(StreamCallback):
   def __init__(self, result):

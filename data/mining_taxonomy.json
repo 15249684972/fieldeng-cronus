@@ -1,0 +1,30 @@
+[
+	{
+		"name":"Mining",
+		"description":"",
+		"childNodes":[
+			{
+				"name":"MineA",
+				"description":"",
+				"childNodes":[
+					{
+						"name":"TruckA",
+						"description":"",
+						"childNodes":[]
+					}
+				]
+			},
+			{
+				"name":"MineB",
+				"description":"",
+				"childNodes":[
+					{
+						"name":"TruckB",
+						"description":"",
+						"childNodes":[]
+					}
+				]
+			}
+		]
+	}
+]

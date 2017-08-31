@@ -2,7 +2,6 @@ from org.apache.commons.io import IOUtils
 from java.nio.charset import StandardCharsets
 from org.apache.nifi.processor.io import StreamCallback
 import json
-import requests
 
 def nextNode(currNode, termPath):
    anchorPath = termPath

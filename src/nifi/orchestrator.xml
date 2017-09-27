@@ -3127,7 +3127,7 @@
             <name>SUCCESS</name>
           </relationships>
           <style></style>
-          <type>com.hortonworks.nifi.processors.PutDruidProcessor</type>
+          <type>com.hortonworks.nifi.processors.PutDruid</type>
         </processors>
         <processors>
           <id>cadd7ff3-d420-325e-0000-000000000000</id>
@@ -4074,7 +4074,7 @@
             <name>SUCCESS</name>
           </relationships>
           <style></style>
-          <type>com.hortonworks.nifi.processors.PutDruidProcessor</type>
+          <type>com.hortonworks.nifi.processors.PutDruid</type>
         </processors>
       </contents>
       <name>historian_ingest</name>

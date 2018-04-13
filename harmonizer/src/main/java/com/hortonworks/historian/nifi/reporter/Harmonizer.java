@@ -473,11 +473,16 @@ public class Harmonizer extends AbstractReportingTask {
     }
 	
 	private String deserializeDataSourceGranularity(String dataSource){
-    	Map<String,Object> granularityMap = dataSourceDetails.get(dataSource);
-    	getLogger().debug("********** granularityMap: " + granularityMap);
-    	String granularityType = ((HashMap)granularityMap.get("queryGranularity")).get("type").toString();
-		String granularity = "";
-		if(granularityType.equalsIgnoreCase("none")){
+		Map<String,Object> granularityMap = dataSourceDetails.get(dataSource);
+    		getLogger().debug("********** granularityMap: " + granularityMap);
+    		String granularityType = null;
+    		String granularity = null; 
+    		if(((HashMap)granularityMap.get("queryGranularity")).get("type") != null) {
+    			granularityType = ((HashMap)granularityMap.get("queryGranularity")).get("type").toString();
+		}else {
+			granularityType = "none";
+		}
+    		if(granularityType.equalsIgnoreCase("none")){
 			granularity = "NONE";
 		}else if(granularityType.equalsIgnoreCase("all")){
 				granularity = "ALL";	

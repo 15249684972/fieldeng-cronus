@@ -46,7 +46,7 @@ public class ReferenceableUtil {
     public static Referenceable getEntityReferenceFromDSL(final AtlasClient atlasClient, final String typeName, final String dslQuery)
             throws Exception {
 
-        final JSONArray results = atlasClient.searchByDSL(dslQuery);
+        final JSONArray results = atlasClient.searchByDSL(dslQuery,1,-1);
         if (results.length() == 0) {
             return null;
         } else {

@@ -1,4 +1,4 @@
-/**
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hortonworks.historian.nifi.reporter;
 
 import org.apache.atlas.AtlasClient;
@@ -477,7 +478,7 @@ public class Harmonizer extends AbstractReportingTask {
     		getLogger().debug("********** granularityMap: " + granularityMap);
     		String granularityType = null;
     		String granularity = null; 
-    		if(((HashMap)granularityMap.get("queryGranularity")).get("type") != null) {
+    		if(((HashMap)granularityMap.get("queryGranularity")) != null) {
     			granularityType = ((HashMap)granularityMap.get("queryGranularity")).get("type").toString();
 		}else {
 			granularityType = "none";

@@ -269,7 +269,7 @@ public class HistorianDeanReporter extends AbstractReportingTask {
     	String dslQuery = "hive_table where name = '"+dataSource+"'";
 		
 		try {
-			JSONArray results = atlasClient.searchByDSL(dslQuery);
+			JSONArray results = atlasClient.searchByDSL(dslQuery,1,-1);
 			Map<String,Object> referenceableJSON = new ObjectMapper().readValue(results.get(0).toString(), Map.class);
 			//System.out.println(referenceableJSON);
 			String tableId = ((Map)referenceableJSON.get("$id$")).get("id").toString();
